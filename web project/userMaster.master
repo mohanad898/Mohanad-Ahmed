@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+    protected void Page_load(object sender, EventArgs e)
+    {
+        string username = "";
+        if (Request.Cookies["userInfo"] != null)
+        {
+            username = Request.Cookies["userInfo"].Values["usern"];
+            lblMsg.Text = "Welcome " + username + " to Hotel!! ";
+        }
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1">
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="lblMsg" runat="server" Font-Size="Large" ForeColor="#000066"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/userHome.aspx">Home</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/changePassword.aspx">Change Password</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/editProfile.aspx">Edit Profile</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/userbrowserooms.aspx">Browse and Filter rooms</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/userreserve.aspx">Reserve</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/canelReservation.aspx">Canel Reservation</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/viewReservation.aspx">View Reservation</asp:HyperLink>
+                            </td>
+                            <td class="auto-style2">
+                                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Signin.aspx">Sign Out</asp:HyperLink>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    </form>
+</body>
+</html>
